@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("clientes")
+@RequestMapping("/clientes")
 public class ClienteRestController {
 
     @Autowired
@@ -26,7 +26,7 @@ public class ClienteRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> inserir(@RequestMapping Cliente cliente){
+    public ResponseEntity<Cliente> inserir(@RequestBody Cliente cliente){
         clienteService.inserir(cliente);
         return ResponseEntity.ok(cliente);
     }
